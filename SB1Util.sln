@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SB1Util", "SB1Util.csproj", "{9F593810-203E-4EE0-9EB8-2076ED90BF0D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9F593810-203E-4EE0-9EB8-2076ED90BF0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F593810-203E-4EE0-9EB8-2076ED90BF0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F593810-203E-4EE0-9EB8-2076ED90BF0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F593810-203E-4EE0-9EB8-2076ED90BF0D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		BuildVersion_IncrementBeforeBuild = False
+		BuildVersion_UpdateFileVersion = True
+		BuildVersion_UpdateAssemblyVersion = True
+		BuildVersion_BuildVersioningStyle = Increment.Increment.Increment.Increment
+		BuildVersion_UseGlobalSettings = True
+		SolutionGuid = {ED9F70B8-6E53-4F15-ABB7-E90EA52E4925}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://qbcsrv04v:8080/tfs/integrate
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ItsUtil.csproj
+		SccLocalPath1 = .
+	EndGlobalSection
+EndGlobal
