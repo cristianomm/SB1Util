@@ -15,21 +15,16 @@ namespace SB1Util.Misc
         private static string COMMENT = "#";
         private static string PROPERTY = KEY + SEPARATOR + VALUE;
         
-        private LinkedList<Property> properties;
+        private Dictionary<string, string> properties;
 
         private static Properties instance;
         private Logger logger;
 
-        public struct Property
-        {
-            public string name;
-            public string value;
-        };
-
+        
         private Properties()
         {
             this.logger = Logger.getInstance();
-            this.properties = new LinkedList<Property>();
+            this.properties = new Dictionary<string, string>();
             loadFromDB();
         }
 
@@ -56,11 +51,8 @@ namespace SB1Util.Misc
                 //se for comentario, vai pra proxima linha
                 //se for prop, adiciona no dicionario
                 if(! line.StartsWith("#")){
-                    Property p;;
                     string[] entry = line.Split('=');
-                    p.name = entry[0];
-                    p.value = entry[1];
-                    properties.AddLast(p);
+                    properties.Add(entry[0], entry[1]);
                 }
 
             }
@@ -72,14 +64,13 @@ namespace SB1Util.Misc
         {
             try
             {
-                Recordset rs = DB.DBFacade.getInstance().Query("SELECT * FROM [@ITS_ADDON_CONFIG]");
-                properties = new LinkedList<Property>();
+                Recordset rs = DB.DBFacade.getInstance().Query("SELECT * FROM [@SB1_ADDON_CONFIG]");
+                properties = new Dictionary<string, string>();
                 while (!rs.EoF)
                 {
-                    Property p;
-                    p.name = (string)rs.Fields.Item("Name").Value;
-                    p.value = (string)rs.Fields.Item("U_Value").Value;
-                    properties.AddLast(p);
+                    string name = (string)rs.Fields.Item("Name").Value;
+                    string value = (string)rs.Fields.Item("U_Value").Value;
+                    properties.Add(name, value);
                     rs.MoveNext();
                 }
             }catch(Exception e)
@@ -89,7 +80,7 @@ namespace SB1Util.Misc
         }
 
 
-        public LinkedList<Property> PropertiesList
+        public Dictionary<string, string> PropertiesList
         {
             get { return properties; }
         }
@@ -100,15 +91,7 @@ namespace SB1Util.Misc
 
             try
             {
-                foreach (Property p in properties)
-                {
-                    if (p.name.Equals(key))
-                    {
-                        val = p.value;
-                        break;
-                    }
-                }
-
+                properties.TryGetValue(key, out val);
             }
             catch (Exception e)
             {
@@ -129,23 +112,7 @@ namespace SB1Util.Misc
         {
             try
             {
-                Property aux;
-                aux.name = "";
-                aux.value = "";
-                foreach (Property p in properties)
-                {
-                    if (p.name.Equals(key))
-                    {
-                        aux = p;
-                        break;
-                    }
-                }
-
-                LinkedListNode<Property> n = new LinkedListNode<Property>(aux);
-                properties.Remove(n);
-                aux.name = key;
-                aux.value = value;                
-                properties.AddLast(new LinkedListNode<Property>(aux));
+                properties.Add(key, value);
 
             }
             catch (Exception e)
@@ -160,15 +127,7 @@ namespace SB1Util.Misc
             bool ret = false;
             try
             {
-                foreach (Property p in properties)
-                {
-                    if (p.name.Equals(key))
-                    {
-                        ret = true;
-                        break;
-                    }
-                }
-
+                ret = properties.ContainsKey(key);
             }
             catch (Exception e)
             {
