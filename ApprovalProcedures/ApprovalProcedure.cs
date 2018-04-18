@@ -95,8 +95,8 @@ namespace SB1Util.ApprovalProcedures
                 //busca os estagios
                 Recordset rs = db.Query(
                     "SELECT APST.Code " +
-                    "FROM [@ITS_APPROVAL] APRV " +
-                    "INNER JOIN [@ITS_APPROVAL_STAGE] APST " +
+                    "FROM [@SB1_APPROVAL] APRV " +
+                    "INNER JOIN [@SB1_APPROVAL_STAGE] APST " +
                     "ON APRV.Code = APST.U_ApprovalCode " +
                     "WHERE APRV.Code = " + key
                     );
@@ -112,8 +112,8 @@ namespace SB1Util.ApprovalProcedures
                 //busca as condicoes
                 rs = db.Query(
                     "SELECT APCD.Code " +
-                    "FROM [@ITS_APPROVAL] APRV " +
-                    "INNER JOIN [@ITS_APPROVAL_CONDITION] APCD " +
+                    "FROM [@SB1_APPROVAL] APRV " +
+                    "INNER JOIN [@SB1_APPROVAL_CONDITION] APCD " +
                     "ON APRV.Code = APCD.U_ApprovalCode " +
                     "WHERE APRV.Code =  " + key
                     );

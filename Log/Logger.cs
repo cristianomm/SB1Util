@@ -57,7 +57,7 @@ namespace SB1Util.Log
                 //B1Connection.getInstance().App.SetStatusBarMessage("Erro ao Iniciar Log: " + e.Message, SAPbouiCOM.BoMessageTime.bmt_Long);
                 //this.fileLog = new StreamWriter(Directory.GetCurrentDirectory() + "/log_"+ DateTime.Now +".log", true, Encoding.UTF8);
 
-                ItsControlException.ItsControlException.Save(e);
+                SB1ControlException.SB1ControlException.Save(e);
             }
 
         }
@@ -87,7 +87,7 @@ namespace SB1Util.Log
             }catch(Exception e)
             {
                 //B1Connection.getInstance().App.SetStatusBarMessage("Erro ao Iniciar Log: " + e.Message, SAPbouiCOM.BoMessageTime.bmt_Long);
-                ItsControlException.ItsControlException.Save(e); 
+                SB1ControlException.SB1ControlException.Save(e); 
             }
         }
         /// <summary>
@@ -195,7 +195,7 @@ namespace SB1Util.Log
             {
                 prepared = false;
                 //setStatusBarMessage("Erro ao escrever log: " + e.Message + " " + e.StackTrace, true, LogType.INFO);
-                ItsControlException.ItsControlException.Save(e);
+                SB1ControlException.SB1ControlException.Save(e);
             }
 
         }
@@ -314,7 +314,7 @@ namespace SB1Util.Log
                 }
 
 
-                UserTable table = DBFacade.getInstance().getUserTable("ITS_ADDON_LOG");
+                UserTable table = DBFacade.getInstance().getUserTable("SB1_ADDON_LOG");
                 table.Code = "" + (dt.Ticks + 1);
                 table.Name = "" + (dt.Ticks + 1);
 
@@ -354,7 +354,7 @@ namespace SB1Util.Log
             catch (Exception e)
             {
                 LogManager.SaveLoggerData(LoggerDataObj);
-                ItsControlException.ItsControlException.Save(e);                
+                SB1ControlException.SB1ControlException.Save(e);                
                 //B1Connection.getInstance().App.SetStatusBarMessage("Erro ao escrever Log: " + e.Message, SAPbouiCOM.BoMessageTime.bmt_Long);
             }
         }
@@ -424,7 +424,7 @@ namespace SB1Util.Log
             //StreamWriter sw = new StreamWriter(Directory.GetCurrentDirectory() + "\\log_" + DateTime.Now + ".log", true, Encoding.UTF8);
             //sw.WriteLine(msg + e.Message);
             //sw.WriteLine(e.Source + " " + e.StackTrace + " " + e.InnerException.StackTrace);
-            ItsControlException.ItsControlException.Save(e); 
+            SB1ControlException.SB1ControlException.Save(e); 
         }
 
 

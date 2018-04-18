@@ -90,8 +90,8 @@
     <Compile Include="Connection\B1Connection.cs" />
     <Compile Include="DB\Field.cs" />
     <Compile Include="DB\ObjectMap.cs" />
-    <Compile Include="ItsControlException\B1Exception.cs" />
-    <Compile Include="ItsControlException\ItsUtilsException.cs" />
+    <Compile Include="SB1ControlException\B1Exception.cs" />
+    <Compile Include="SB1ControlException\ItsUtilsException.cs" />
     <Compile Include="JournalEntry\JournalEntryOp.cs" />
     <Compile Include="Log\LogManager.cs" />
     <Compile Include="ApprovalProcedures\ApprovalProcedures.cs" />
@@ -165,7 +165,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties BuildVersion_IncrementBeforeBuild="False" BuildVersion_BuildVersioningStyle="None.None.Increment.Increment" BuildVersion_UpdateFileVersion="True" BuildVersion_UpdateAssemblyVersion="True" BuildVersion_UseGlobalSettings="True" />
+      <UserProperties BuildVersion_UseGlobalSettings="True" BuildVersion_UpdateAssemblyVersion="True" BuildVersion_UpdateFileVersion="True" BuildVersion_BuildVersioningStyle="None.None.Increment.Increment" BuildVersion_IncrementBeforeBuild="False" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

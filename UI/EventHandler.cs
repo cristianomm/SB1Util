@@ -41,7 +41,7 @@ namespace SB1Util.UI
             }
             catch (Exception e)
             {
-                ItsControlException.ItsControlException.Save(e); 
+                SB1ControlException.SB1ControlException.Save(e); 
                 oApp.SetStatusBarMessage(e.Message, SAPbouiCOM.BoMessageTime.bmt_Medium, true);
             }
         }
@@ -58,7 +58,7 @@ namespace SB1Util.UI
             }
             catch (Exception e)
             {
-                ItsControlException.ItsControlException.Save(e); 
+                SB1ControlException.SB1ControlException.Save(e); 
                 oApp.SetStatusBarMessage(e.Message, SAPbouiCOM.BoMessageTime.bmt_Medium, true);
             }
         }
@@ -75,7 +75,7 @@ namespace SB1Util.UI
             }
             catch (Exception e)
             {
-                ItsControlException.ItsControlException.Save(e); 
+                SB1ControlException.SB1ControlException.Save(e); 
             }
         }
 
@@ -130,14 +130,14 @@ namespace SB1Util.UI
                     }
                     catch (Exception e)
                     {
-                        ItsControlException.ItsControlException.Save(e); 
+                        SB1ControlException.SB1ControlException.Save(e); 
                     }
                 }
                 BubbleEvent = oController.EventReceiver(pVal.FormTypeEx, pVal.ItemUID, pVal.BeforeAction, pVal);
             }catch(Exception e)
             {
                 BubbleEvent = false;
-                ItsControlException.ItsControlException.Save(e); 
+                SB1ControlException.SB1ControlException.Save(e); 
             }
         }
 
@@ -160,7 +160,7 @@ namespace SB1Util.UI
                     }
                     catch (Exception e) 
                     {
-                        ItsControlException.ItsControlException.Save(e); 
+                        SB1ControlException.SB1ControlException.Save(e); 
                     }
                 }
 
@@ -170,7 +170,7 @@ namespace SB1Util.UI
             }catch(Exception e)
             {
                 BubbleEvent = false;
-                ItsControlException.ItsControlException.Save(e); 
+                SB1ControlException.SB1ControlException.Save(e); 
             }
         }
 
@@ -192,7 +192,7 @@ namespace SB1Util.UI
                     }
                     catch (Exception e) 
                     {
-                        ItsControlException.ItsControlException.Save(e); 
+                        SB1ControlException.SB1ControlException.Save(e); 
                     }
                 }
 
@@ -201,7 +201,7 @@ namespace SB1Util.UI
             }catch(Exception e)
             {
                 BubbleEvent = false;
-                ItsControlException.ItsControlException.Save(e); 
+                SB1ControlException.SB1ControlException.Save(e); 
             }
         }
 

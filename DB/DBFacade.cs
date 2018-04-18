@@ -104,7 +104,7 @@ namespace SB1Util.DB
                 obj = null;                
                 logMessage = "Erro ao carregar Objeto de usuario:" + userTable + ": " + e.Message;
                 logger.log(logMessage, Logger.LogType.ERROR, e, false);
-                ItsControlException.ItsControlException.Save(e);
+                SB1ControlException.SB1ControlException.Save(e);
             }
 
             return obj;
@@ -128,7 +128,7 @@ namespace SB1Util.DB
                 usertable = null;
                 logMessage = "Erro buscando Tabela de usuario:" + usertable + ": " + e.Message;
                 logger.log(logMessage, Logger.LogType.ERROR, e, false);
-                ItsControlException.ItsControlException.Save(e);
+                SB1ControlException.SB1ControlException.Save(e);
             }
 
             return usertable;
@@ -168,7 +168,7 @@ namespace SB1Util.DB
                 logMessage = "Erro ao remover Tabela de Usuário: '"
                     + tableName + "': " + errMsg + " : " + err + " : " + e.Message;
                 logger.log(logMessage, Logger.LogType.ERROR, e);
-                ItsControlException.ItsControlException.Save(e);
+                SB1ControlException.SB1ControlException.Save(e);
             }
 
         }
@@ -221,7 +221,7 @@ namespace SB1Util.DB
                 logger.log("Erro ao remover Campo de Usuário " + tableField
                     + " da tabela " + tableName + " Retorno SAP: " + err + " - " + errMsg, Logger.LogType.ERROR, e);
 
-                ItsControlException.ItsControlException.Save(e);
+                SB1ControlException.SB1ControlException.Save(e);
             }
 
         }
@@ -296,7 +296,7 @@ namespace SB1Util.DB
                 logMessage = "Erro ao criar Tabela de Usuário: '" + tableName + "': " + errMsg + " : " + err;
                 logger.log(logMessage, Logger.LogType.ERROR, e);
 
-                //ItsControlException.ItsControlException.Save(e);
+                //SB1ControlException.SB1ControlException.Save(e);
                 if (oUserTablesMD != null)
                 {
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(oUserTablesMD);
@@ -395,7 +395,7 @@ namespace SB1Util.DB
                     + tableField + "' em '" + tableName + "': " + errMsg + " : " + err;
                 logger.log(logMessage, Logger.LogType.ERROR, e);
 
-                //ItsControlException.ItsControlException.Save(e);
+                //SB1ControlException.SB1ControlException.Save(e);
 
                 if (oUserFieldsMD != null)
                 {
@@ -449,7 +449,7 @@ namespace SB1Util.DB
                 //retorna true pois nao deve tentar adicionar em caso de erro
                 ret = true;
                 logger.log(logMessage, Logger.LogType.ERROR, e);
-                ItsControlException.ItsControlException.Save(e);
+                SB1ControlException.SB1ControlException.Save(e);
                 
                 System.Runtime.InteropServices.Marshal.ReleaseComObject(oRecordSet);
                 oRecordSet = null;
@@ -475,7 +475,7 @@ namespace SB1Util.DB
                 logMessage = "Erro ao executar consulta:" + query + ": " + e.Message;
                 logger.log(logMessage, Logger.LogType.ERROR, e,false);
                 Exception ex = new Exception(logMessage, e);
-                ItsControlException.ItsControlException.Save(ex);
+                SB1ControlException.SB1ControlException.Save(ex);
             }
 
             return oRecordSet;
@@ -524,7 +524,7 @@ namespace SB1Util.DB
                 //oConnection.App.SetStatusBarMessage(e.Message, SAPbouiCOM.BoMessageTime.bmt_Medium, true);
                 logMessage = "Erro ao buscar "+ func + " de " + tableName + ": " + e.Message;
                 logger.log(logMessage, Logger.LogType.ERROR, e);
-                ItsControlException.ItsControlException.Save(e);
+                SB1ControlException.SB1ControlException.Save(e);
             }
 
             return min_max;
@@ -596,7 +596,7 @@ namespace SB1Util.DB
             catch (Exception e)
             {
                 logger.log("Erro ao truncar tabela de usuario (" + userTable + "): " + e.Message, Logger.LogType.ERROR, e, false);
-                ItsControlException.ItsControlException.Save(e);
+                SB1ControlException.SB1ControlException.Save(e);
             }
 
         }

@@ -44,7 +44,7 @@ namespace SB1Util.Connection
             }
             catch(Exception e)
             {
-                ItsControlException.ItsControlException.Save(e);
+                SB1ControlException.SB1ControlException.Save(e);
             }
 
             return oCompany;
@@ -59,7 +59,7 @@ namespace SB1Util.Connection
             }
             catch(Exception e)
             {
-                ItsControlException.ItsControlException.Save(e);
+                SB1ControlException.SB1ControlException.Save(e);
             }
         }
 
@@ -116,7 +116,7 @@ namespace SB1Util.Connection
             }
             catch (Exception e)
             {
-                ItsControlException.ItsControlException.Save(e);
+                SB1ControlException.SB1ControlException.Save(e);
                 con = false;
             }
             return con;

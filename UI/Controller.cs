@@ -51,22 +51,22 @@ namespace SB1Util.UI
             try
             {
                 //Cria tabela de configuracao do addon
-                oDBFacade.CreateTable("ITS_ADDON_CONFIG", "Configuração", BoUTBTableType.bott_NoObject);
-                oDBFacade.CreateField("@ITS_ADDON_CONFIG", "Value", "Valor", BoFieldTypes.db_Memo, 255);
+                oDBFacade.CreateTable("SB1_ADDON_CONFIG", "Configuração", BoUTBTableType.bott_NoObject);
+                oDBFacade.CreateField("@SB1_ADDON_CONFIG", "Value", "Valor", BoFieldTypes.db_Memo, 255);
 
-                oDBFacade.CreateTable("ITS_ADDON_LOG", "Log", BoUTBTableType.bott_NoObject);
-                oDBFacade.CreateField("@ITS_ADDON_LOG", "LogType", "LogType", BoFieldTypes.db_Alpha, 50);
-                oDBFacade.CreateField("@ITS_ADDON_LOG", "Text", "Text", BoFieldTypes.db_Memo, 3000);
-                oDBFacade.CreateField("@ITS_ADDON_LOG", "Date", "Date", BoFieldTypes.db_Date, 12);
-                oDBFacade.CreateField("@ITS_ADDON_LOG", "Time", "Time", BoFieldTypes.db_Alpha, 12);
-                oDBFacade.CreateField("@ITS_ADDON_LOG", "User", "User", BoFieldTypes.db_Alpha, 20);
-                oDBFacade.CreateField("@ITS_ADDON_LOG", "CompanyVersion", "Company Version", BoFieldTypes.db_Alpha, 20);
-                oDBFacade.CreateField("@ITS_ADDON_LOG", "AddonVersion", "Addon Version", BoFieldTypes.db_Alpha, 20);
-                oDBFacade.CreateField("@ITS_ADDON_LOG", "AddonName", "Addon Name", BoFieldTypes.db_Alpha, 50);
-                oDBFacade.CreateField("@ITS_ADDON_LOG", "LibVersion", "Library Version", BoFieldTypes.db_Alpha, 20);
-                oDBFacade.CreateField("@ITS_ADDON_LOG", "FormID", "Form", BoFieldTypes.db_Alpha, 20);
-                oDBFacade.CreateField("@ITS_ADDON_LOG", "XMLException", "Internal Exception", BoFieldTypes.db_Memo, sizeof(int));
-                oDBFacade.CreateField("@ITS_ADDON_LOG", "Operation", "Operation", BoFieldTypes.db_Memo, 100);
+                oDBFacade.CreateTable("SB1_ADDON_LOG", "Log", BoUTBTableType.bott_NoObject);
+                oDBFacade.CreateField("@SB1_ADDON_LOG", "LogType", "LogType", BoFieldTypes.db_Alpha, 50);
+                oDBFacade.CreateField("@SB1_ADDON_LOG", "Text", "Text", BoFieldTypes.db_Memo, 3000);
+                oDBFacade.CreateField("@SB1_ADDON_LOG", "Date", "Date", BoFieldTypes.db_Date, 12);
+                oDBFacade.CreateField("@SB1_ADDON_LOG", "Time", "Time", BoFieldTypes.db_Alpha, 12);
+                oDBFacade.CreateField("@SB1_ADDON_LOG", "User", "User", BoFieldTypes.db_Alpha, 20);
+                oDBFacade.CreateField("@SB1_ADDON_LOG", "CompanyVersion", "Company Version", BoFieldTypes.db_Alpha, 20);
+                oDBFacade.CreateField("@SB1_ADDON_LOG", "AddonVersion", "Addon Version", BoFieldTypes.db_Alpha, 20);
+                oDBFacade.CreateField("@SB1_ADDON_LOG", "AddonName", "Addon Name", BoFieldTypes.db_Alpha, 50);
+                oDBFacade.CreateField("@SB1_ADDON_LOG", "LibVersion", "Library Version", BoFieldTypes.db_Alpha, 20);
+                oDBFacade.CreateField("@SB1_ADDON_LOG", "FormID", "Form", BoFieldTypes.db_Alpha, 20);
+                oDBFacade.CreateField("@SB1_ADDON_LOG", "XMLException", "Internal Exception", BoFieldTypes.db_Memo, sizeof(int));
+                oDBFacade.CreateField("@SB1_ADDON_LOG", "Operation", "Operation", BoFieldTypes.db_Memo, 100);
 
                 //Remessas
                 //campo para configurar a conta do estorno na remessa
@@ -78,7 +78,7 @@ namespace SB1Util.UI
             catch (Exception e) 
             {
                 //Logger.logCaos("Erro na inicializacao basica. ", e);
-                ItsControlException.ItsControlException.Save(e); 
+                SB1ControlException.SB1ControlException.Save(e); 
             }
         }
 
@@ -137,7 +137,7 @@ namespace SB1Util.UI
             }
             catch (Exception e)
             {
-                ItsControlException.ItsControlException.Save(e); 
+                SB1ControlException.SB1ControlException.Save(e); 
             }
             log.releaseOperation();
         }
@@ -578,7 +578,7 @@ namespace SB1Util.UI
             }catch(Exception e)
             {
                 bubbleEvent = false;
-                ItsControlException.ItsControlException.Save(e); 
+                SB1ControlException.SB1ControlException.Save(e); 
             }
 
             log.releaseOperation();
@@ -632,7 +632,7 @@ namespace SB1Util.UI
             }
             catch (Exception e)
             {
-                ItsControlException.ItsControlException.Save(e); 
+                SB1ControlException.SB1ControlException.Save(e); 
             }
             return r;
         }
@@ -658,7 +658,7 @@ namespace SB1Util.UI
             }
             catch (Exception e)
             {
-                ItsControlException.ItsControlException.Save(e); 
+                SB1ControlException.SB1ControlException.Save(e); 
             }
         }
 

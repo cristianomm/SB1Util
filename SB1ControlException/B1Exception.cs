@@ -6,7 +6,7 @@ using System.IO;
 using System.Xml;
 using SB1Util.Serializer;
 
-namespace SB1Util.ItsControlException
+namespace SB1Util.SB1ControlException
 {
     [Serializable]
     public class B1Exception

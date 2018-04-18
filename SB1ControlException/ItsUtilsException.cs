@@ -6,14 +6,14 @@ using System.IO;
 using System.Reflection;
 using System.Xml;
 using SB1Util.Serializer;
-using SB1Util.ItsControlException;
+using SB1Util.SB1ControlException;
 
-namespace SB1Util.ItsControlException
+namespace SB1Util.SB1ControlException
 {
     /// <summary>
     /// Classe que grava em arquivi as exceções do sistema
     /// </summary>
-    public class ItsControlException
+    public class SB1ControlException
     {
         /// <summary>
         /// Serializa e salva a exceção gerada em arquivo XML dentro do diretório LogSystem, na raiz do AddOn

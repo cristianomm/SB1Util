@@ -654,7 +654,7 @@ namespace SB1Util.UI
             catch (Exception e)
             {
                 logger.log(e.Message, Logger.LogType.ERROR, e, false);
-                ItsControlException.ItsControlException.Save(e);
+                SB1ControlException.SB1ControlException.Save(e);
             }
         }
 
@@ -668,7 +668,7 @@ namespace SB1Util.UI
             }
             catch (Exception e) 
             {
-                ItsControlException.ItsControlException.Save(e);
+                SB1ControlException.SB1ControlException.Save(e);
             }
         }       
 
@@ -759,7 +759,7 @@ namespace SB1Util.UI
             catch (Exception e)
             {
                 logger.log("Erro: " + e.Message, Logger.LogType.ERROR, e, false);
-                ItsControlException.ItsControlException.Save(e);
+                SB1ControlException.SB1ControlException.Save(e);
             }
 
 
@@ -896,7 +896,7 @@ namespace SB1Util.UI
             catch (Exception e)
             {
                 logger.log(e.Message, Logger.LogType.ERROR, e, false);
-                ItsControlException.ItsControlException.Save(e);
+                SB1ControlException.SB1ControlException.Save(e);
             }
 
         }
@@ -1034,7 +1034,7 @@ namespace SB1Util.UI
             {
                 ret = false;
                 logger.log(e.Message, Logger.LogType.ERROR, e, false);
-                ItsControlException.ItsControlException.Save(e);
+                SB1ControlException.SB1ControlException.Save(e);
             }
             return ret;
         }
@@ -1145,7 +1145,7 @@ namespace SB1Util.UI
             catch (Exception e)
             {
                 logger.log(e.Message, Logger.LogType.ERROR, e, false);
-                ItsControlException.ItsControlException.Save(e);
+                SB1ControlException.SB1ControlException.Save(e);
             }
 
             return ret;
@@ -1511,7 +1511,7 @@ namespace SB1Util.UI
             catch (Exception e)
             {
                 logger.log(e.Message, Logger.LogType.ERROR, e, false);
-                ItsControlException.ItsControlException.Save(e);
+                SB1ControlException.SB1ControlException.Save(e);
             }
         }
 
